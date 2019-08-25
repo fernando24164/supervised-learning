@@ -4,11 +4,8 @@ import pandas as pd
 
 args = Namespace(
     seed=1234,
-    data_file="./data/sample_data.csv",
+    data_file="../data/sample_data.csv",
     num_samples=100,
-    train_size=0.75,
-    test_size=0.25,
-    num_epochs=100,
 )
 
 np.random.seed(args.seed)

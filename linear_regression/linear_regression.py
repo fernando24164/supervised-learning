@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
+import pickle
 
 dataset = pd.read_csv("./data/sample_data.csv")
 print(dataset["y"].describe())
@@ -17,6 +18,8 @@ regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
 y_pred = regressor.predict(X_test)
+
+pickle.dump(regressor, open('../data/model.pkl', 'wb'))
 
 df = pd.DataFrame({"Actual": y_test.flatten(), "Predicted": y_pred.flatten()})
 print(df)
