@@ -1,6 +1,6 @@
 FROM python:3.7.4-slim
 ADD ./webapp /app
-ADD ./data /app
+ADD ./data /data
 COPY ./requirements.txt /app
 WORKDIR /app
 RUN pip install -r requirements.txt

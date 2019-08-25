@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  ml-learn:
+    image: 'ml-learn'
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    networks:
+      - ML-backend-tier
+    ports:
+      - 8080:8080
+    volumes:
+      - "./webapp:/app"
+      - "./data:/data"
+
+networks:
+  ML-backend-tier:
+    driver: bridge

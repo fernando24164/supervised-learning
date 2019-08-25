@@ -3,8 +3,7 @@ import pickle
 from config import config
 from flask import Flask, jsonify
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-model = pickle.load(open(basedir+'/../model.pkl', 'rb'))
+model = pickle.load(open('/data/model.pkl', 'rb'))
 
 
 def create_app(config_name):
