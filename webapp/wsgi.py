@@ -1,3 +1,3 @@
 from backend import create_app
 
-app = create_app('default')
+app = create_app("default")
