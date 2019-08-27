@@ -14,7 +14,7 @@ np.random.seed(args.seed)
 def generate_data(num_samples):
     X = np.array(range(num_samples))
     random_noise = np.random.uniform(-10, 11, num_samples)
-    y = 3.65*X + 10 + random_noise
+    y = 3.65 * X + 10 + random_noise
     return X, y
 
 

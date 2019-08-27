@@ -19,7 +19,7 @@ regressor.fit(X_train, y_train)
 
 y_pred = regressor.predict(X_test)
 
-pickle.dump(regressor, open('../data/model.pkl', 'wb'))
+pickle.dump(regressor, open("../data/model.pkl", "wb"))
 
 df = pd.DataFrame({"Actual": y_test.flatten(), "Predicted": y_pred.flatten()})
 print(df)
