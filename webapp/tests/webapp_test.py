@@ -1,7 +1,7 @@
 
 import json
 import pytest
-from webapp.backend import create_app
+from backend import create_app
 
 app = create_app("testing")
 
@@ -21,6 +21,8 @@ def decode_response(response):
 
 
 def test_predict_endpoint(client):
-    response = post_json(client, "/api/predict", {})
+    response = post_json(client, "/api/predict", {'points': [75, 76, 77]})
     assert response.status_code == 200
-    assert decode_response(response) == {"predict_value": [120.23]}
+    assert decode_response(response) == {"response": [284.28057575230645,
+                                                      287.9241248492282,
+                                                      291.5676739461499]}

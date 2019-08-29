@@ -12,8 +12,7 @@ def create_app(config_name):
     def index():
         return jsonify("it works!")
 
-    from .api import api
-
+    from backend.api import api
     app.register_blueprint(api)
 
     return app
